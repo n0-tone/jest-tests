@@ -1,246 +1,246 @@
-# Mini Testes de JavaScript
+# JavaScript Mini Tests
 
-Uma plataforma interativa para aprender e testar JavaScript, com dashboard administrativo para acompanhar o progresso dos alunos. Construída com **Node.js**, **Express**, **Jest** e **Tailwind CSS**.
+An interactive platform to learn and test JavaScript, with an admin dashboard to track student progress. Built with **Node.js**, **Express**, **Jest**, and **Tailwind CSS**.
 
-**Demo ao vivo:** [jest.t2ne.eu](https://jest.t2ne.eu)
-
----
-
-## Funcionalidades
-
-### **Para Estudantes:**
-
-- Interface moderna e responsiva com Tailwind CSS
-- Sistema de autenticação por número de aluno
-- 3 exercícios interativos de JavaScript:
-  - Conversão Celsius ↔ Fahrenheit
-  - Verificação de Palíndromos
-  - Soma de Arrays
-- Execução segura de código no browser
-- Sistema de progresso local (localStorage)
-- Feedback visual em tempo real
-
-### **Para Administradores:**
-
-- Dashboard protegido com autenticação HTTP Basic
-- Visualização de todas as submissions dos alunos
-- Estatísticas em tempo real (progresso, taxa de sucesso)
-- Visualização do código submetido por cada aluno
-- Interface administrativa moderna
-- Auto-refresh automático
-
-### **Sistema de Testes:**
-
-- **77 testes Jest** abrangentes
-- Testes de integração com Supertest
-- Cobertura completa de APIs e funcionalidades
-- Testes de performance e segurança
-- Validação de dados e edge cases
+**Live demo:** Currently Unavailable
 
 ---
 
-## Estrutura do Projeto
+## Features
+
+### **For Students:**
+
+- Modern, responsive UI with Tailwind CSS
+- Authentication system using student ID
+- 3 interactive JavaScript exercises:
+  - Celsius ↔ Fahrenheit conversion
+  - Palindrome checking
+  - Array sum
+- Safe code execution in the browser
+- Local progress tracking (localStorage)
+- Real-time visual feedback
+
+### **For Administrators:**
+
+- Dashboard protected with HTTP Basic authentication
+- View all student submissions
+- Real-time statistics (progress, success rate)
+- View the code submitted by each student
+- Modern admin interface
+- Automatic auto-refresh
+
+### **Test Suite:**
+
+- **77 comprehensive Jest tests**
+- Integration tests with Supertest
+- Full coverage of APIs and features
+- Performance and security tests
+- Data validation and edge cases
+
+---
+
+## Project Structure
 
 ```
 eqs/
-├── public/                  # Assets estáticos servidos
-│   ├── index.html           # Página principal dos exercícios
-│   ├── admin.html           # Dashboard administrativo
-│   ├── admin.js             # JavaScript do dashboard
-│   ├── exercises.js         # JavaScript dos exercícios (copiado)
-│   └── tailwind.css         # CSS compilado
-├── src/                     # Código-fonte
-│   ├── app.js               # Configuração Express + API routes
-│   ├── server.js            # Servidor HTTP
+├── public/                  # Served static assets
+│   ├── index.html           # Main exercises page
+│   ├── admin.html           # Admin dashboard
+│   ├── admin.js             # Dashboard JavaScript
+│   ├── exercises.js         # Exercises JavaScript (copied)
+│   └── tailwind.css         # Compiled CSS
+├── src/                     # Source code
+│   ├── app.js               # Express configuration + API routes
+│   ├── server.js            # HTTP server
 │   ├── frontend/            # Frontend JavaScript
-│   │   └── exercises.js     # Lógica dos exercícios (source)
-│   └── styles/              # Estilos CSS
+│   │   └── exercises.js     # Exercise logic (source)
+│   └── styles/              # CSS styles
 │       └── tailwind.css     # Tailwind source
-├── tests/                   # 71 testes Jest
-│   ├── app.test.js          # Testes de integração
-│   ├── utils.test.js        # Testes de utilidades
-│   ├── validation.test.js   # Testes de validação
-│   ├── frontend.test.js     # Testes do frontend
-│   └── integration.test.js  # Testes de performance
-├── .env                     # Variáveis de ambiente (local)
-├── .env.example             # Template para variáveis
-├── jest.config.js           # Configuração Jest
-├── tailwind.config.js       # Configuração Tailwind
-├── render.yaml              # Deploy no Render
-└── package.json             # Dependências e scripts
+├── tests/                   # 71 Jest tests
+│   ├── app.test.js          # Integration tests
+│   ├── utils.test.js        # Utility tests
+│   ├── validation.test.js   # Validation tests
+│   ├── frontend.test.js     # Frontend tests
+│   └── integration.test.js  # Performance tests
+├── .env                     # Environment variables (local)
+├── .env.example             # Environment variables template
+├── jest.config.js           # Jest configuration
+├── tailwind.config.js       # Tailwind configuration
+├── render.yaml              # Render deployment config
+└── package.json             # Dependencies and scripts
 ```
 
 ---
 
-## Instalação e Execução Local
+## Local Installation and Run
 
-### 1. **Clonar o repositório:**
+### 1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/t2ne/jest-tests
 cd jest-tests
 ```
 
-### 2. **Instalar dependências:**
+### 2. **Install dependencies:**
 
 ```bash
 npm install
 ```
 
-### 3. **Configurar variáveis de ambiente:**
+### 3. **Configure environment variables:**
 
 ```bash
 cp .env.example .env
-# Editar .env com as suas credenciais admin
+# Edit .env with your admin credentials
 ```
 
-**Conteúdo do `.env`:**
+**`.env` contents:**
 
 ```env
-ADMIN_USERNAME=um_username
-ADMIN_PASSWORD=uma_password
+ADMIN_USERNAME=some_username
+ADMIN_PASSWORD=some_password
 PORT=3000
 ```
 
-### 4. **Build do css:**
+### 4. **Build CSS:**
 
 ```bash
-npm run build:css     # Compila Tailwind CSS
+npm run build:css     # Compile Tailwind CSS
 ```
 
-### 5. **Executar testes:**
+### 5. **Run tests:**
 
 ```bash
-npm test            # 77 testes Jest
+npm test            # 77 Jest tests
 ```
 
-### 6. **Executar em desenvolvimento:**
+### 6. **Run in development:**
 
 ```bash
-npm run dev         # Servidor + watch CSS
-# ou
-npm start           # Apenas servidor
+npm run dev         # Server + CSS watch
+# or
+npm start           # Server only
 ```
 
-**Acesso local:**
+**Local access:**
 
-- **Estudantes:** `http://localhost:3000`
-- **Admin:** `http://localhost:3000/admin`
+- **Students:** http://localhost:3000
+- **Admin:** http://localhost:3000/admin
 
 ---
 
-## APIs Disponíveis
+## Available APIs
 
-### **Públicas:**
+### **Public:**
 
-- `GET /` - Página principal dos exercícios
-- `POST /api/submissions` - Submeter exercício (estudantes)
-- `GET /api/submissions/:studentId` - Submissions de aluno específico
+- `GET /` - Main exercises page
+- `POST /api/submissions` - Submit exercise (students)
+- `GET /api/submissions/:studentId` - Submissions for a specific student
 
-### **Protegidas (HTTP Basic Auth):**
+### **Protected (HTTP Basic Auth):**
 
-- `GET /admin` - Dashboard administrativo
-- `GET /api/admin/submissions` - Todas as submissions (admin)
+- `GET /admin` - Admin dashboard
+- `GET /api/admin/submissions` - All submissions (admin)
 
-**Exemplo de uso:**
+**Usage example:**
 
 ```bash
-# Sem autenticação (401 Unauthorized)
+# Without authentication (401 Unauthorized)
 curl https://jest.t2ne.eu/api/admin/submissions
 
-# Com autenticação (200 OK)
+# With authentication (200 OK)
 curl -u admin:password https://jest.t2ne.eu/api/admin/submissions
 ```
 
 ---
 
-## Sistema de Testes
+## Test Suite
 
-### **Cobertura dos testes (71 total):**
+### **Test coverage (71 total):**
 
-- **`app.test.js`** - Testes de integração Express (14 testes)
-- **`utils.test.js`** - Funções utilitárias (15 testes)
-- **`validation.test.js`** - Validação e lógica de negócio (17 testes)
-- **`frontend.test.js`** - Lógica do frontend (12 testes)
-- **`integration.test.js`** - Performance e integração (17 testes)
+- **`app.test.js`** - Express integration tests (14 tests)
+- **`utils.test.js`** - Utility functions (15 tests)
+- **`validation.test.js`** - Validation and business logic (17 tests)
+- **`frontend.test.js`** - Frontend logic (12 tests)
+- **`integration.test.js`** - Performance and integration (17 tests)
 
-**Executar testes:**
+**Run tests:**
 
 ```bash
-npm test                    # Todos os testes
-npm test -- app.test.js    # Testes específicos
-npm test -- --verbose      # Output detalhado
+npm test                    # All tests
+npm test -- app.test.js    # Specific test file
+npm test -- --verbose      # Detailed output
 ```
 
 ---
 
-## Como Usar (Estudantes)
+## How to Use (Students)
 
-1. **Aceder à aplicação**
-2. **Inserir número de aluno** (5 dígitos)
-3. **Escolher exercício** para resolver
-4. **Escrever código** JavaScript
-5. **Executar** e ver resultados em tempo real
-6. **Progresso guardado** automaticamente
+1. **Access the application**
+2. **Enter student ID** (5 digits)
+3. **Choose an exercise** to solve
+4. **Write JavaScript code**
+5. **Run** and see results in real time
+6. **Progress is saved** automatically
 
-### **Exercícios disponíveis:**
+### **Available exercises:**
 
-1. **Celsius ↔ Fahrenheit** - Conversão de temperaturas
-2. **Palíndromos** - Verificação de strings
-3. **Soma Arrays** - Operações matemáticas
-
----
-
-## Dashboard Admin
-
-**Acesso:** `/admin` (requer autenticação)
-
-**Funcionalidades:**
-
-- Estatísticas em tempo real
-- Lista de todos os alunos
-- Código submetido por exercício
-- Estado dos exercícios (completo/pendente)
-- Auto-refresh (30 segundos)
-- Taxa de sucesso global
+1. **Celsius ↔ Fahrenheit** - Temperature conversion
+2. **Palindromes** - String checking
+3. **Array Sum** - Math operations
 
 ---
 
-## Segurança
+## Admin Dashboard
 
-- Autenticação HTTP Basic para rotas admin
-- Validação de input nos exercícios
-- Sanitização de código executado
-- Headers Express ocultados
-- Variáveis de ambiente para credenciais
-- Proteção contra XSS e code injection
+**Path:** `/admin` (authentication required)
+
+**Features:**
+
+- Real-time statistics
+- List of all students
+- Code submitted per exercise
+- Exercise status (complete/pending)
+- Auto-refresh (30 seconds)
+- Global success rate
 
 ---
 
-## Scripts Disponíveis
+## Security
+
+- HTTP Basic authentication for admin routes
+- Input validation on exercises
+- Sanitization of executed code
+- Hidden Express headers
+- Environment variables for credentials
+- Protection against XSS and code injection
+
+---
+
+## Available Scripts
 
 ```bash
-npm start             # Produção
-npm run dev           # Desenvolvimento (nodemon)
-npm test              # Executar testes Jest
-npm run build:css     # Compilar Tailwind CSS
-npm run dev:css       # Watch mode CSS
-npm run render-build  # Build completo para Render
+npm start             # Production
+npm run dev           # Development (nodemon)
+npm test              # Run Jest tests
+npm run build:css     # Compile Tailwind CSS
+npm run dev:css       # CSS watch mode
+npm run render-build  # Full build for Render
 ```
 
 ---
 
-## Tecnologias
+## Technologies
 
 - **Backend:** Node.js, Express.js, dotenv
 - **Frontend:** Vanilla JavaScript, Tailwind CSS
 - **Testing:** Jest, Supertest
 - **Deploy:** Render.com
-- **Segurança:** HTTP Basic Authentication
+- **Security:** HTTP Basic Authentication
 
 ---
 
-## Autores
+## Authors
 
 - [t2ne](https://github.com/t2ne)
 - [Renaxpto](https://github.com/Renaxpto)
