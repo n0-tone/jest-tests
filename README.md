@@ -77,7 +77,7 @@ eqs/
 ### 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/t2ne/jest-tests
+git clone https://github.com/n0-tone/jest-tests
 cd jest-tests
 ```
 
@@ -146,10 +146,10 @@ npm start           # Server only
 
 ```bash
 # Without authentication (401 Unauthorized)
-curl https://jest.t2ne.eu/api/admin/submissions
+curl https://gh.no-tone.com/jest-tests/api/admin/submissions
 
 # With authentication (200 OK)
-curl -u admin:password https://jest.t2ne.eu/api/admin/submissions
+curl -u admin:password https://gh.no-tone.com/jest-tests/api/admin/submissions
 ```
 
 ---
@@ -242,5 +242,5 @@ npm run render-build  # Full build for Render
 
 ## Authors
 
-- [t2ne](https://github.com/t2ne)
+- [no-tone](https://github.com/n0-tone)
 - [Renaxpto](https://github.com/Renaxpto)
